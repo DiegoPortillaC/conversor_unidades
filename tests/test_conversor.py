@@ -2,7 +2,7 @@ import unittest
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from src import longitud,masa
+from src import longitud, masa, temperatura
 
 class TestConversionUnidades(unittest.TestCase):
     ################################################################
@@ -86,6 +86,34 @@ class TestConversionUnidades(unittest.TestCase):
         self.assertEqual(masa.Masa.gram_ounce(28.3495), 1)
         self.assertAlmostEqual(masa.Masa.gram_ounce(100), 3.5274 , places = 4 )
         self.assertAlmostEqual(masa.Masa.gram_ounce(250), 8.81849 , places = 4)
+
+    ################################################################
+    ################        Test temperatura        ################
+    ################################################################
+
+    def test_celsius_kelvin(self):
+        "Test conversion de Celsius a Kelvin"
+        self.assertEqual(temperatura.Temperatura.celsius_kelvin(0), 273.15)
+        self.assertEqual(temperatura.Temperatura.celsius_kelvin(100), 373.15)
+        self.assertEqual(temperatura.Temperatura.celsius_kelvin(-40), 233.15)
+
+    def test_kelvin_celsius(self):
+        "Test conversion de Kelvin a Celsius"
+        self.assertEqual(temperatura.Temperatura.kelvin_celsius(273.15), 0)
+        self.assertEqual(temperatura.Temperatura.kelvin_celsius(373.15), 100)
+        self.assertEqual(temperatura.Temperatura.kelvin_celsius(233.15), -40)
+
+    def test_celsius_fahrenheit(self):
+        "Test conversion de Celsius a Fahrenheit"
+        self.assertEqual(temperatura.Temperatura.celsius_fahren(0), 32)
+        self.assertEqual(temperatura.Temperatura.celsius_fahren(100), 212)
+        self.assertEqual(temperatura.Temperatura.celsius_fahren(-40), -40)
+
+    def test_fahrenheit_celsius(self):
+        "Test conversion de Fahrenheit a Celsius"
+        self.assertEqual(temperatura.Temperatura.fahren_celsius(32), 0)
+        self.assertEqual(temperatura.Temperatura.fahren_celsius(212), 100)
+        self.assertEqual(temperatura.Temperatura.fahren_celsius(-40), -40)
 
 if __name__ == "__main__":
     unittest.main()
