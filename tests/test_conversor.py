@@ -2,9 +2,12 @@ import unittest
 import sys
 import os
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from src import longitud
+from src import longitud,masa
 
 class TestConversionUnidades(unittest.TestCase):
+    ################################################################
+    ################        Test longitud        ###################
+    ################################################################
     def test_inch_cm(self):
         "Test conversion de inches a centimetros"
         self.assertEqual(longitud.Longitud.inch_cm(1), 2.54)
@@ -13,9 +16,9 @@ class TestConversionUnidades(unittest.TestCase):
 
     def test_cm_inch(self):
         "Test conversion de centimetros a inches"
-        self.assertEqual(longitud.Longitud.cm_inch(1), 0.393701)
-        self.assertEqual(longitud.Longitud.cm_inch(5), 1.968505)
-        self.assertEqual(longitud.Longitud.cm_inch(10), 3.93701)
+        self.assertAlmostEqual(longitud.Longitud.cm_inch(1), 0.393701)
+        self.assertAlmostEqual(longitud.Longitud.cm_inch(5), 1.968505)
+        self.assertAlmostEqual(longitud.Longitud.cm_inch(10), 3.93701)
 
     def test_km_meters(self):
         "Test conversion de kilometros a metros"
@@ -40,6 +43,12 @@ class TestConversionUnidades(unittest.TestCase):
         self.assertEqual(longitud.Longitud.meter_yard(1), 1.09361)
         self.assertEqual(longitud.Longitud.meter_yard(2), 2.18722)
         self.assertEqual(longitud.Longitud.meter_yard(5), 5.46805)
+    ################################################################
+    ################        Test masa        #######################
+    ################################################################
+    def test_gram_kilo(self):
+        "Test conversion de gramos a kilos"
+        self.assertEqual(masa.Masa.gram_kilo(1000), 1)
 
 if __name__ == "__main__":
     unittest.main()
