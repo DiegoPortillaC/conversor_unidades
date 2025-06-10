@@ -8,6 +8,7 @@ class TestConversionUnidades(unittest.TestCase):
     ################################################################
     ################        Test longitud        ###################
     ################################################################
+
     def test_inch_cm(self):
         "Test conversion de inches a centimetros"
         self.assertEqual(longitud.Longitud.inch_cm(1), 2.54)
@@ -43,12 +44,48 @@ class TestConversionUnidades(unittest.TestCase):
         self.assertEqual(longitud.Longitud.meter_yard(1), 1.09361)
         self.assertEqual(longitud.Longitud.meter_yard(2), 2.18722)
         self.assertEqual(longitud.Longitud.meter_yard(5), 5.46805)
+
     ################################################################
     ################        Test masa        #######################
     ################################################################
+
     def test_gram_kilo(self):
         "Test conversion de gramos a kilos"
         self.assertEqual(masa.Masa.gram_kilo(1000), 1)
+        self.assertEqual(masa.Masa.gram_kilo(3750), 3.750)
+        self.assertEqual(masa.Masa.gram_kilo(7200), 7.200)
+
+    def test_kilo_gram(self):
+        "Test conversion de kilos a gramos"
+        self.assertEqual(masa.Masa.kilo_gram(1), 1000)
+        self.assertEqual(masa.Masa.kilo_gram(3.75), 3750)
+        self.assertEqual(masa.Masa.kilo_gram(7.2), 7200)
+    
+    def test_lb_kg(self):
+        "Test conversion de libras a kilos"
+        #Comparacion hasta 4 decimales para evitar errores con decimales
+        self.assertAlmostEqual(masa.Masa.lb_kilo(1), 0.453592 ,places = 4)
+        self.assertAlmostEqual(masa.Masa.lb_kilo(5), 2.26796 ,places = 4)
+        self.assertAlmostEqual(masa.Masa.lb_kilo(10), 4.53592 , places = 4)
+
+    def test_kg_lb(self):
+        "Test conversion de kilos a libras"
+        self.assertAlmostEqual(masa.Masa.kilo_lb(1), 2.20462 )
+        self.assertAlmostEqual(masa.Masa.kilo_lb(5), 11.0231 )
+        self.assertAlmostEqual(masa.Masa.kilo_lb(10), 22.0462 )
+
+    def test_ounce_gram (self):
+        "Test conversion de onzas a gramos"
+        self.assertEqual(masa.Masa.ounce_gram(1), 28.3495 )
+        self.assertEqual(masa.Masa.ounce_gram(5), 141.7475 )
+        self.assertEqual(masa.Masa.ounce_gram(15), 425.2425 )
+    
+    def test_gram_ounce (self):
+        "Test conversion de gramos a onzas"
+        #Comparacion hasta 4 decimales para evitar errores con decimales
+        self.assertEqual(masa.Masa.gram_ounce(28.3495), 1)
+        self.assertAlmostEqual(masa.Masa.gram_ounce(100), 3.5274 , places = 4 )
+        self.assertAlmostEqual(masa.Masa.gram_ounce(250), 8.81849 , places = 4)
 
 if __name__ == "__main__":
     unittest.main()
