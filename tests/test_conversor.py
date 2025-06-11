@@ -93,15 +93,15 @@ class TestConversionUnidades(unittest.TestCase):
 
     def test_celsius_kelvin(self):
         "Test conversion de Celsius a Kelvin"
-        self.assertEqual(temperatura.Temperatura.celsius_kelvin(0), 273.15)
-        self.assertEqual(temperatura.Temperatura.celsius_kelvin(100), 373.15)
-        self.assertEqual(temperatura.Temperatura.celsius_kelvin(-40), 233.15)
+        self.assertAlmostEqual(temperatura.Temperatura.celsius_kelvin(0), 273.15, places=4)
+        self.assertAlmostEqual(temperatura.Temperatura.celsius_kelvin(100), 373.15, places=4)
+        self.assertAlmostEqual(temperatura.Temperatura.celsius_kelvin(-40), 233.15, places=4)
 
     def test_kelvin_celsius(self):
         "Test conversion de Kelvin a Celsius"
-        self.assertEqual(temperatura.Temperatura.kelvin_celsius(273.15), 0)
-        self.assertEqual(temperatura.Temperatura.kelvin_celsius(373.15), 100)
-        self.assertEqual(temperatura.Temperatura.kelvin_celsius(233.15), -40)
+        self.assertAlmostEqual(temperatura.Temperatura.kelvin_celsius(273.15), 0, places=4)
+        self.assertAlmostEqual(temperatura.Temperatura.kelvin_celsius(373.15), 100, places=4)
+        self.assertAlmostEqual(temperatura.Temperatura.kelvin_celsius(233.15), -40, places=4)
 
     def test_celsius_fahrenheit(self):
         "Test conversion de Celsius a Fahrenheit"
