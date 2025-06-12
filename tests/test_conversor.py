@@ -1,8 +1,5 @@
 import unittest
-import sys
-import os
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-from src import longitud, masa, temperatura
+from src.conversores import longitud, masa ,temperatura
 
 class TestConversionUnidades(unittest.TestCase):
     ################################################################
