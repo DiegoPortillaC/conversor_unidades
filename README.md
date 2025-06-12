@@ -51,10 +51,11 @@ Una biblioteca Python para realizar conversiones entre diferentes sistemas de un
 
 ```
 conversor_unidades/
-├── src/               # Código fuente
-│   ├── longitud.py    # Conversiones de longitud
-│   ├── masa.py        # Conversiones de masa
-│   └── temperatura.py # Conversiones de temperatura
+├── src/
+│     └── conversores/   # Código fuente
+│        ├── longitud.py    # Conversiones de longitud
+│        ├── masa.py        # Conversiones de masa
+│        └── temperatura.py # Conversiones de temperatura
 ├── tests/             # Tests unitarios
 │   └── test_conversor.py
 └── requirements.txt   # Dependencias del proyecto
