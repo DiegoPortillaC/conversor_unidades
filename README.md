@@ -52,7 +52,7 @@ Una biblioteca Python para realizar conversiones entre diferentes sistemas de un
 ```
 conversor_unidades/
 ├── src/
-│     └── conversores/   # Código fuente
+│     └──conversores/       # Código fuente
 │        ├── longitud.py    # Conversiones de longitud
 │        ├── masa.py        # Conversiones de masa
 │        └── temperatura.py # Conversiones de temperatura
