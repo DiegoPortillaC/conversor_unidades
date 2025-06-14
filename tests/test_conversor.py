@@ -1,5 +1,5 @@
 import unittest
-from src.conversores import longitud, masa ,temperatura
+from conversores import longitud, masa ,temperatura
 
 class TestConversionUnidades(unittest.TestCase):
     ################################################################
