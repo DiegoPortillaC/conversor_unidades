@@ -69,9 +69,26 @@ conversor_unidades/
    cd conversor_unidades
    ```
 
-2. Instalar las dependencias:
+2. Crear y activar un entorno virtual:
+   ```bash
+   # Crear el entorno virtual
+   python -m venv venv
+   
+   # Activar el entorno
+   # Windows
+   venv\Scripts\activate
+   # Linux/Mac
+   source venv/bin/activate
+   ```
+
+3. Instalar las dependencias:
    ```bash
    pip install -r requirements.txt
+   ```
+
+3. Instalar el paquete en modo editable:
+   ```bash
+   pip install -e.
    ```
 
 ## 🧪 Ejecución de Tests
@@ -80,6 +97,9 @@ Para ejecutar los tests de la aplicación:
 
 ```bash
 python -m unittest tests/test_conversor.py
+# Alternativa
+cd tests
+python .\test_conversor.py
 ```
 
 ## 📝 Ejemplos de Uso

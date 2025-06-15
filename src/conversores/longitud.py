@@ -1,3 +1,13 @@
+"""
+Módulo para realizar conversiones entre diferentes unidades de longitud.
+Incluye conversiones entre sistemas métricos e imperiales.
+
+Conversiones disponibles:
+- Pulgadas ↔ Centímetros
+- Kilómetros ↔ Metros
+- Yardas ↔ Metros
+"""
+
 class Longitud:
 
     def inch_cm (number):
