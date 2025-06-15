@@ -81,12 +81,7 @@ conversor_unidades/
    source venv/bin/activate
    ```
 
-3. Instalar las dependencias:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-3. Instalar el paquete en modo editable:
+3. Instalar el paquete:
    ```bash
    pip install -e.
    ```
