@@ -1,3 +1,13 @@
+"""
+Módulo para realizar conversiones entre diferentes unidades de masa.
+Incluye conversiones entre sistemas métricos e imperiales.
+
+Conversiones disponibles:
+- Gramos ↔ Kilogramos
+- Libras ↔ Kilogramos
+- Onzas ↔ Gramos
+"""
+
 class  Masa:
 
     def gram_kilo(number):

@@ -1,3 +1,12 @@
+"""
+Módulo para realizar conversiones entre diferentes unidades de temperatura.
+Incluye conversiones entre las principales escalas de temperatura.
+
+Conversiones disponibles:
+- Celsius ↔ Kelvin
+- Celsius ↔ Fahrenheit
+"""
+
 class Temperatura:
 
     def celsius_kelvin(number):
